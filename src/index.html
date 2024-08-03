@@ -1,9 +1,80 @@
 <!--#include file="inc-header.html"-->
 
 <div class="middle" id="middle">
-  <div class="container">
-    <h2>middle</h2>
-    <a href="javascript:void(0)" class="mfp-link" data-href="./popup/test.html">Тестовый попап</a>
+  <div class="page-wrapper">
+    <div class="container">
+      <div class="login">
+        <div class="login-logo">
+          <img src="./images/login-big.svg" alt="">
+        </div>
+
+        <div class="login-form">
+          <form action="#" class="login-form-validate">
+            <div class="login-form-title">Войти в систему</div>
+
+            <div class="ui-fields">
+              <div class="ui-field">
+                <div for="login" class="ui-label">Имя пользователя:</div>
+                <input type="text" class="ui-input" name="email" id="email">
+              </div>
+
+              <div class="ui-field">
+                <div for="login" class="ui-label">Пароль:</div>
+                <input type="text" class="ui-input" name="pass" id="pass">
+              </div>
+            </div>
+
+            <div class="login-form-submit">
+              <button class="ui-btn">Войти</button>
+
+              <div class="login-call">
+                <div class="login-call-title">Забыли логин или пароль?</div>
+                <a href="#" class="login-call-link">+375(44) 121-12-21 <img src="./images/icon-whats.svg" alt=""></a>
+              </div>
+            </div>
+          </form>
+
+          <script>
+            document.addEventListener("DOMContentLoaded", (event) => {
+                $(document).ready(function () {
+                  $(".login-form-validate").validate({
+                    errorElement: "span",
+
+                    rules: {
+                      email: {
+                        required: true,
+                        email: true
+                      },
+                      pass: {
+                        required: true,
+                        minlength: 6
+                      }
+                    },
+
+                    messages: {
+                      email: {
+                        email: "Введите корректный email"
+                      },
+                      pass: {
+                        minlength: "Минимальная длина пароля - 6 символов"
+                      },
+                    },
+
+                    errorPlacement: function (error, element) {
+                      if (element.hasClass('ui-select')) {
+                        element.closest('.ui-field').append(error);
+                      }
+                      if (element.hasClass('ui-input')) {
+                        element.closest('.ui-field').append(error);
+                      }
+                    },
+                  });
+              });
+            });
+          </script>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 

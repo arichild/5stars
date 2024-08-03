@@ -1,0 +1,109 @@
+.info {
+  h3 {
+    color: #253237;
+    font-weight: 500;
+  }
+
+  .ui-select {
+    font-size: 24px;
+    font-weight: 500;
+    height: 36px;
+    line-height: 36px;
+  }
+
+  // .jq-selectbox__dropdown li {
+  //   position: relative;
+
+  //   &::before {
+  //     content: "";
+  //     background-image: url("../images/icon-star.svg");
+  //     background-repeat: no-repeat;
+  //     width: 10px;
+  //     height: 10px;
+  //     background-size: 10px;
+  //     position: absolute;
+  //     right: 22px;
+  //     top: 21px;
+  //   }
+  // }
+
+  &-select {
+    position: relative;
+    max-width: 68px;
+    width: 100%;
+
+    img {
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      right: 29px;
+      top: 10px;
+    }
+  }
+
+  canvas{
+    background:#fff;
+    height:160px;
+  }
+}
+
+@media(max-width: 1024.99px) {
+   .info {
+    // .white-block {
+    //   &-title {
+    //     font-size: 22px;
+    //   }
+    // }
+
+    h3 {
+      font-size: 20px;
+    }
+   }
+}
+
+@media(max-width: 768.99px) {
+  .info {
+    .chart-info {
+      margin-right: 20px;
+    }
+
+    // .white-block {
+    //   &-title {
+    //     font-size: 20px;
+    //   }
+    // }
+
+    h3 {
+      font-size: 18px;
+    }
+  }
+}
+
+@media(max-width: 400.99px) {
+  .info {
+    canvas {
+      margin: 0 auto;
+      margin-bottom: 20px;
+    }
+
+    .chart-info {
+      margin-right: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .chart-item {
+      margin-right: 15px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    // .white-block {
+    //   &-title {
+    //     font-size: 18px;
+    //   }
+    // }
+  }
+}

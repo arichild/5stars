@@ -1,0 +1,235 @@
+.login {
+  margin: 70px auto 50px;
+  max-width: 870px;
+  background-color: #fff;
+  display: flex;
+
+  @media(min-width: 1440px) {
+    .ui-btn {
+      font-size: 18px;
+      height: 52px;
+      line-height: 52px;
+    }
+
+    .ui-input {
+      height: 56px;
+      line-height: 54px;
+    }
+  }
+
+
+  &-call {
+    &-title {
+      font-size: 12px;
+      font-weight: 400;
+    }
+
+    &-link {
+      display: inline-block;
+      font-size: 18px;
+      font-weight: 500;
+
+
+      img {
+        position: relative;
+        top: 2px;
+      }
+    }
+  }
+
+  &-logo {
+    line-height: 0;
+    text-align: center;
+    padding: 48px 90px 90px 90px;
+    border-right: 1px solid #E7EEF2;
+    width: 50%;
+  }
+
+  &-form {
+    padding: 100px 40px 82px 42px;
+    color: #253237;
+    width: 50%;
+
+    &-title {
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 28px;
+    }
+
+    &-submit {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .ui-fields {
+      margin-bottom: 34px;
+    }
+  }
+}
+
+@media(max-width: 1440.99px) {
+  .login {
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    &-logo {
+      padding: 80px 35px 80px 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 220px;
+      }
+    }
+
+    &-form {
+      padding: 80px 35px 62px 35px;
+
+      &-title {
+        margin-bottom: 24px;
+      }
+
+      .ui-fields {
+        margin-bottom: 30px;
+      }
+
+      .ui-field {
+        margin-bottom: 20px;
+      }
+    }
+
+    // .ui-btn {
+    //   height: 50px;
+    //   line-height: 50px;
+    // }
+  }
+}
+
+@media(max-width: 1366.99px) {
+  .login {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    &-logo {
+      padding: 25px 50px 50px;
+
+      img {
+        width: 200px;
+      }
+    }
+
+    &-form {
+      padding: 70px 30px 50px 30px;
+
+      &-title {
+        margin-bottom: 22px;
+        font-size: 22px;
+      }
+    }
+
+    // .ui-btn {
+    //   height: 48px;
+    //   line-height: 48px;
+    // }
+  }
+}
+
+@media(max-width: 1024.99px) {
+  .login {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    &-logo {
+      img {
+        width: 180px;
+      }
+    }
+
+    &-call {
+      &-link {
+        font-size: 16px;
+      }
+    }
+
+    // .ui-btn {
+    //   padding: 0 30px;
+    //   height: 45px;
+    //   line-height: 45px;
+    // }
+  }
+}
+
+@media(max-width: 768.99px) {
+  .login {
+    flex-direction: column;
+
+    &-logo {
+      display: none;
+      // padding: 0;
+      // display: block;
+      // border: none;
+      // width: 100%;
+      // line-height: 0;
+      // margin-bottom: 20px;
+
+      // img {
+      //   width: 80px;
+      // }
+    }
+
+    &-form {
+      padding: 40px;
+      width: 100%;
+
+      &-title {
+        margin-bottom: 20px;
+        font-size: 20px;
+      }
+
+      .ui-fields {
+        margin-bottom: 20px;
+      }
+
+      .ui-field {
+        margin-bottom: 15px;
+      }
+    }
+
+    // .ui-btn {
+    //   height: 42px;
+    //   line-height: 42px;
+    // }
+  }
+}
+
+@media(max-width: 576.99px) {
+  .login {
+    margin-left: -20px;
+    margin-right: -20px;
+
+    // &-logo {
+    //   img {
+    //     width: 60px;
+    //   }
+    // }
+
+    &-form {
+      padding: 40px 20px;
+    }
+  }
+}
+
+@media(max-width: 400.99px) {
+  .login {
+    &-form {
+      &-submit {
+        flex-direction: column;
+
+        .ui-btn {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}

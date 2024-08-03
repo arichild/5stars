@@ -1,0 +1,120 @@
+.registr {
+  .ui-btn.add-group {
+    max-width: 100%;
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 41px;
+    // height: 48px;
+    line-height: 1;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: left;
+
+    img {
+      left: 14px;
+    }
+  }
+
+  // .ui-btn.delete-group {
+  //   line-height: 46px;
+  // }
+
+  .ui-btn.delete-coach {
+    max-width: 126px;
+    width: 100%;
+    padding-left: 41px;
+    padding-right: 10px;
+    // height: 48px;
+    // line-height: 46px;
+    font-weight: 700;
+    font-size: 14px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      left: 14px;
+      background-image: url("../images/icon-delete.svg");
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+@media(max-width: 1440.99px) {
+  .registr {
+    .ui-btn.delete-group {
+      height: 46px;
+      line-height: 44px;
+    }
+
+    .ui-btn.add-group {
+      text-align: center;
+      padding-left: 0;
+      height: 46px;
+      line-height: 44px;
+    }
+  }
+}
+
+@media(max-width: 1366.99px) {
+  .registr {
+    .ui-btn.delete-group {
+      text-align: center;
+      padding-left: 0;
+      height: 44px;
+      line-height: 42px;
+    }
+
+    .ui-btn.add-group {
+      height: 44px;
+      line-height: 42px;
+    }
+  }
+}
+
+@media(max-width: 1024.99px) {
+  .registr {
+    .ui-btn.delete-group {
+      text-align: center;
+      padding-left: 0;
+      height: 42px;
+      line-height: 40px;
+    }
+
+    .ui-btn.add-group {
+      height: 42px;
+      line-height: 40px;
+    }
+  }
+}
+
+@media(max-width: 768.99px) {
+  .registr {
+    .ui-btn.delete-group {
+      text-align: center;
+      padding-left: 0;
+      height: 40px;
+      line-height: 38px;
+    }
+
+    .ui-btn.add-group {
+      height: 40px;
+      line-height: 38px;
+    }
+  }
+}
+
+@media(max-width: 576.99px) {
+  .registr {
+    .ui-btns {
+      flex-direction: column;
+    }
+
+    .ui-btn.delete-coach {
+      max-width: none;
+      width: auto;
+    }
+  }
+}

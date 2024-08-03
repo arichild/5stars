@@ -1,0 +1,348 @@
+<!--#include file="inc-header.html"-->
+
+<div class="middle" id="middle">
+  <div class="page-wrapper">
+    <div class="registr">
+      <div class="container">
+        <div class="ui-title">Регистрация</div>
+
+        <form action="#" class="registr-form">
+          <div class="white-block-list">
+            <div class="white-block big">
+              <div class="white-block-header">
+                <div class="white-block-title">Общая информация</div>
+              </div>
+
+              <div class="white-block-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="ui-field">
+                      <div class="ui-label">Полное наименование организации:</div>
+                      <input type="text" class="ui-input small" id="company" name="company">
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="ui-field">
+                      <div class="ui-label">Краткое наименование организации:</div>
+                      <input type="text" class="ui-input small" id="companyShort" name="companyShort">
+                    </div>
+                  </div>
+                  <div class="col-md-5">
+                    <div class="ui-field">
+                      <div class="ui-label">Дата основания:</div>
+
+                      <span class="calendar">
+                        <img src="./images/icon-date.svg" alt="">
+                        <input type="text" class="ui-input small calendar" placeholder="__.__.____"  id="dateBirthCompany" name="dateBirthCompany">
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="white-block-bottom column-reverse">
+                  <label class="input-file">
+                    <input type="file" name="photo" data-name="photo" accept=".png, .jpg, .jpeg">
+                    <span>ФОТО тренера <img src="./images/icon-file.svg" alt=""></span>
+                    <img class="preview" alt="">
+                  </label>
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="ui-field">
+                        <div class="ui-label">ФИО директора:</div>
+                        <input type="text" class="ui-input small" id="fioDir" name="fioDir">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="ui-field">
+                        <div class="ui-label">Телефон директора:</div>
+                        <input type="text" class="ui-input phone-mask small" id="phoneDir" name="phoneDir">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="ui-field">
+                        <div class="ui-label">Email школы:</div>
+                        <input type="text" class="ui-input small" id="emailSchool" name="emailSchool">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="white-block small">
+              <div class="white-block-header">
+                <div class="white-block-title">Ответственное лицо</div>
+              </div>
+
+              <div class="white-block-body">
+                <div class="ui-field">
+                  <div class="ui-label">ФИО ответственного за ведение:</div>
+                  <input type="text" class="ui-input small" id="fioPers" name="fioPers">
+                </div>
+                <div class="ui-field">
+                  <div class="ui-label">Номер телефона ответственного за ведение:</div>
+                  <input type="text" class="ui-input phone-mask small" placeholder="+375 __ ___-__-__" id="phonePers" name="phonePers">
+                </div>
+                <div class="ui-field">
+                  <div class="ui-label">Email ответственного за ведение:</div>
+                  <input type="text" class="ui-input small" id="emailPers" name="emailPers">
+                </div>
+                <div class="ui-field">
+                  <div class="ui-label">Примечание:</div>
+                  <textarea type="text" class="ui-input small" rows="2"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="white-block-list">
+            <div class="white-block">
+              <div class="white-block-header">
+                <div class="white-block-title">Карточка тренера-преподавателя</div>
+              </div>
+
+              <div class="white-block-body">
+                <div class="white-block-bottom column">
+                  <label class="input-file mb-20">
+                    <input type="file" name="photo" data-name="photo">
+                    <span>ФОТО тренера <img src="./images/icon-file.svg" alt=""></span>
+                    <img class="preview" alt="">
+                  </label>
+
+                  <div class="white-block-containers">
+                    <div class="white-block-container">
+                      <div class="white-block-column column-1 column-ss-12">
+                        <div class="ui-field">
+                          <div class="ui-label">ФИО тренера-преподавателя</div>
+                          <input type="text" class="ui-input small" id="fioTeach" name="fioTeach" data-validation="lettersonly" data-name="fioTeach">
+                        </div>
+                      </div>
+                      <div class="white-block-column column-2 column-sm-3 column-xs-6 column-ss-12">
+                        <div class="ui-field">
+                          <div class="ui-label">Город рождения</div>
+                          <input type="text" class="ui-input small" id="town" name="town" data-validation="lettersonly" data-name="town">
+                        </div>
+                      </div>
+                      <div class="white-block-column column-2 column-sm-3 column-xs-6 column-ss-12">
+                        <div class="ui-field">
+                          <div class="ui-label">Дата рождения</div>
+
+                          <span class="calendar">
+                            <img src="./images/icon-date.svg" alt="">
+                            <input type="text" class="ui-input small calendar" placeholder="__.__.____"  id="dateBirthCouch" name="dateBirthCouch" data-name="dateBirthCouch">
+                          </span>
+                        </div>
+                      </div>
+                      <div class="white-block-column column-3 column-sm-3 column-xs-6 column-ss-12">
+                        <div class="ui-field">
+                          <div class="ui-label">Номер телефона</div>
+                          <input type="text" class="ui-input phone-mask small" id="phoneCoach" name="phoneCoach" data-validation="phone" data-name="phone">
+                        </div>
+                      </div>
+                      <div class="white-block-column column-2 column-sm-3 column-xs-6 column-ss-12">
+                        <div class="ui-field">
+                          <div class="ui-label">
+                            Начало работы
+                            <span class="ui-tooltip">
+                              <span class="ui-tooltip-icon">?</span>
+                              <div class="ui-tooltip-answer">Подсказка</div>
+                            </span>
+                          </div>
+
+                          <span class="calendar">
+                            <img src="./images/icon-date.svg" alt="">
+                            <input id="startDate" name="startDate" type="text" class="ui-input small calendar" data-name="startDate" placeholder="__.__.____">
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="white-block-container group">
+                      <div class="white-block-column column-4 column-ss-6">
+                        <div class="ui-field field-delete">
+                          <div class="ui-label">
+                            Стаж
+                            <span class="ui-tooltip">
+                              <span class="ui-tooltip-icon">?</span>
+                              <div class="ui-tooltip-answer">Подсказка</div>
+                            </span>
+                          </div>
+                          <input type="text" class="ui-input small" id="exp" name="exp" data-validation="number" data-name="exp">
+                        </div>
+                      </div>
+                      <div class="white-block-column column-4 column-ss-6">
+                        <div class="ui-field field-delete">
+                          <div class="ui-label">
+                            Нагрузка
+                            <span class="ui-tooltip">
+                              <span class="ui-tooltip-icon">?</span>
+                              <div class="ui-tooltip-answer">Подсказка</div>
+                            </span>
+                          </div>
+                          <input type="text" class="ui-input small" id="load" name="load" data-name="name">
+                        </div>
+                      </div>
+                      <div class="white-block-column column-3 column-sm-3 column-ss-12 delete-column">
+                        <div class="ui-field field-delete">
+                          <div class="ui-label">Штатный, не штатный</div>
+                          <select type="text" class="ui-input ui-select" name="staff" id="staff" data-name="staff">
+                            <option></option>
+                            <option value="1">Штатный</option>
+                            <option value="0">не штатный</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="white-block-column column-3 column-sm-3 column-xs-4 column-ss-12">
+                        <div class="ui-field">
+                          <div class="ui-label">
+                            Выполняемая функция
+                            <span class="ui-tooltip">
+                              <span class="ui-tooltip-icon">?</span>
+                              <div class="ui-tooltip-answer">Подсказка</div>
+                            </span>
+                          </div>
+                          <select type="text" class="ui-input ui-select" name="func" id="func" data-name="func">
+                            <option></option>
+                            <option value="1">Штатный</option>
+                            <option value="0">не штатный</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="white-block-column column-3 column-sm-3 column-xs-4 column-ss-12">
+                        <div class="ui-field">
+                          <div class="ui-label">Направленность работы</div>
+                          <select type="text" class="ui-input ui-select" name="focus" id="focus" data-name="focus">
+                            <option></option>
+                            <option value="1">Штатный</option>
+                            <option value="0">не штатный</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="white-block-column column-4 column-sm-3 column-xs-4 column-ss-12">
+                        <div class="ui-field">
+                          <div class="ui-label">Группа</div>
+                          <select type="text" class="ui-input ui-select" name="group" id="group" data-name="group">
+                            <option></option>
+                            <option value="1">Штатный</option>
+                            <option value="0">не штатный</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="white-block-column column-2 column-ss-12">
+                        <button class="ui-btn blue small add-group">
+                          <img src="./images/icon-add.svg" alt="">
+                          Добавить группу
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ui-btns full-width">
+            <button class="ui-btn small add-coach">Добавить тренера</button>
+            <button class="ui-btn small">Сохранить</button>
+          </div>
+
+          <script>
+            document.addEventListener("DOMContentLoaded", (event) => {
+                $(document).ready(function () {
+                  $(".registr-form").validate({
+                    errorElement: "span",
+
+                    rules: {
+                      company: {
+                        required: true,
+                        lettersonly: true,
+                      },
+                      companyShort: {
+                        required: true,
+                        lettersonly: true,
+                      },
+                      dateBirthCompany: {
+                        required: true,
+                      },
+                      fioDir: {
+                        lettersonly: true,
+                        required: true,
+                      },
+                      phoneDir: {
+                        phone: true,
+                        required: true,
+                      },
+                      emailSchool: {
+                        email: true,
+                        required: true,
+                      },
+                      fioPers: {
+                        lettersonly: true,
+                        required: true,
+                      },
+                      phonePers: {
+                        phone: true,
+                        required: true,
+                      },
+                      emailPers: {
+                        email: true,
+                        required: true,
+                      },
+                      fioTeach: {
+                        lettersonly: true,
+                        required: true,
+                      },
+                      town: {
+                        lettersonly: true,
+                        required: true,
+                      },
+                      dateBirthCouch: {
+                        required: true,
+                      },
+                      phoneCoach: {
+                        phone: true,
+                        required: true,
+                      },
+                      exp: {
+                        number: true,
+                        required: true,
+                      },
+                      load: {
+                        required: true,
+                      },
+                      staff: {
+                        required: true,
+                      },
+                      func: {
+                        required: true,
+                      },
+                      focus: {
+                        required: true,
+                      },
+                      group: {
+                        required: true,
+                      },
+                      startDate: {
+                        required: true,
+                      }
+                    },
+
+                    errorPlacement: function (error, element) {
+                      if (element.hasClass('ui-select')) {
+                        element.closest('.ui-field').append(error);
+                      }
+                      if (element.hasClass('ui-input')) {
+                        element.closest('.ui-field').append(error);
+                      }
+                    },
+                  });
+              });
+            });
+          </script>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--#include file="inc-footer.html"-->

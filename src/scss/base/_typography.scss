@@ -66,6 +66,11 @@ a {
   color: $linkColor;
   text-decoration: none;
   outline: none;
+  transition: color .2s ease;
+
+  &:hover {
+    color: #d1d1d1 !important;
+  }
 }
 
 img {

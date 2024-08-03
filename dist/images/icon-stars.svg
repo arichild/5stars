@@ -1,0 +1,42 @@
+<svg width="168.000000" height="28.000000" viewBox="0 0 168 28" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip192_8201">
+			<rect id="StarFill" rx="-0.500000" width="27.000000" height="27.000000" transform="translate(0.500000 0.500000) rotate(0.000000)" fill="white" fill-opacity="0"/>
+		</clipPath>
+		<clipPath id="clip192_8203">
+			<rect id="StarFill" rx="-0.500000" width="27.000000" height="27.000000" transform="translate(35.500000 0.500000) rotate(0.000000)" fill="white" fill-opacity="0"/>
+		</clipPath>
+		<clipPath id="clip192_8205">
+			<rect id="StarFill" rx="-0.500000" width="27.000000" height="27.000000" transform="translate(70.500000 0.500000) rotate(0.000000)" fill="white" fill-opacity="0"/>
+		</clipPath>
+		<clipPath id="clip192_8207">
+			<rect id="StarFill" rx="-0.500000" width="27.000000" height="27.000000" transform="translate(105.500000 0.500000) rotate(0.000000)" fill="white" fill-opacity="0"/>
+		</clipPath>
+		<clipPath id="clip192_8209">
+			<rect id="StarFill" rx="-0.500000" width="27.000000" height="27.000000" transform="translate(140.500000 0.500000) rotate(0.000000)" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<rect id="StarFill" rx="-0.500000" width="27.000000" height="27.000000" transform="translate(0.500000 0.500000) rotate(0.000000)" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip192_8201)">
+		<path id="Vector" d="M6.31 27.02C5.64 27.37 4.87 26.76 5.01 25.98L6.46 17.71L0.3 11.83C-0.28 11.28 0.02 10.28 0.79 10.17L9.36 8.95L13.18 1.38C13.53 0.7 14.46 0.7 14.81 1.38L18.63 8.95L27.2 10.17C27.97 10.28 28.27 11.28 27.69 11.83L21.53 17.71L22.98 25.98C23.12 26.76 22.35 27.37 21.68 27.02L13.99 23.07L6.31 27.02L6.31 27.02Z" fill="#FFA800" fill-opacity="1.000000" fill-rule="nonzero"/>
+	</g>
+	<rect id="StarFill" rx="-0.500000" width="27.000000" height="27.000000" transform="translate(35.500000 0.500000) rotate(0.000000)" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip192_8203)">
+		<path id="Vector" d="M41.31 27.02C40.64 27.37 39.87 26.76 40.01 25.98L41.46 17.71L35.3 11.83C34.72 11.28 35.02 10.28 35.79 10.17L44.36 8.95L48.18 1.38C48.53 0.7 49.46 0.7 49.81 1.38L53.63 8.95L62.2 10.17C62.97 10.28 63.27 11.28 62.69 11.83L56.53 17.71L57.98 25.98C58.12 26.76 57.35 27.37 56.68 27.02L48.99 23.07L41.31 27.02L41.31 27.02Z" fill="#FFA800" fill-opacity="1.000000" fill-rule="nonzero"/>
+	</g>
+	<rect id="StarFill" rx="-0.500000" width="27.000000" height="27.000000" transform="translate(70.500000 0.500000) rotate(0.000000)" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip192_8205)">
+		<path id="Vector" d="M76.31 27.02C75.64 27.37 74.87 26.76 75.01 25.98L76.46 17.71L70.3 11.83C69.72 11.28 70.02 10.28 70.79 10.17L79.36 8.95L83.18 1.38C83.53 0.7 84.46 0.7 84.81 1.38L88.63 8.95L97.2 10.17C97.97 10.28 98.27 11.28 97.69 11.83L91.53 17.71L92.98 25.98C93.12 26.76 92.35 27.37 91.68 27.02L83.99 23.07L76.31 27.02L76.31 27.02Z" fill="#FFA800" fill-opacity="1.000000" fill-rule="nonzero"/>
+	</g>
+	<rect id="StarFill" rx="-0.500000" width="27.000000" height="27.000000" transform="translate(105.500000 0.500000) rotate(0.000000)" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip192_8207)">
+		<path id="Vector" d="M111.31 27.02C110.64 27.37 109.87 26.76 110.01 25.98L111.46 17.71L105.3 11.83C104.72 11.28 105.02 10.28 105.79 10.17L114.36 8.95L118.18 1.38C118.53 0.7 119.46 0.7 119.81 1.38L123.63 8.95L132.2 10.17C132.97 10.28 133.27 11.28 132.69 11.83L126.53 17.71L127.98 25.98C128.12 26.76 127.35 27.37 126.68 27.02L118.99 23.07L111.31 27.02L111.31 27.02Z" fill="#FFA800" fill-opacity="1.000000" fill-rule="nonzero"/>
+	</g>
+	<rect id="StarFill" rx="-0.500000" width="27.000000" height="27.000000" transform="translate(140.500000 0.500000) rotate(0.000000)" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip192_8209)">
+		<path id="Vector" d="M146.31 27.02C145.64 27.37 144.87 26.76 145.01 25.98L146.46 17.71L140.3 11.83C139.72 11.28 140.02 10.28 140.79 10.17L149.36 8.95L153.18 1.38C153.53 0.7 154.46 0.7 154.81 1.38L158.63 8.95L167.2 10.17C167.97 10.28 168.27 11.28 167.69 11.83L161.53 17.71L162.98 25.98C163.12 26.76 162.35 27.37 161.68 27.02L153.99 23.07L146.31 27.02L146.31 27.02Z" fill="#FFA800" fill-opacity="1.000000" fill-rule="nonzero"/>
+	</g>
+</svg>

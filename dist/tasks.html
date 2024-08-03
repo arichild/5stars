@@ -1,0 +1,263 @@
+<!--#include file="inc-header2.html"-->
+
+<div class="middle" id="middle">
+  <div class="page-wrapper">
+    <div class="container">
+      <div class="tasks">
+        <div class="ui-title">«Набор» U7-U10</div>
+
+        <div class="tasks-info">
+          <div class="tasks-info-rating">
+            <span>1<img src="./images/icon-star.svg" alt=""></span>
+          </div>
+
+          <div class="tasks-info-body">
+            <div class="tasks-info-content">
+              <div class="tasks-info-title">Выполнено заданий</div>
+
+              <div class="tasks-info-completed border">
+                <div class="progress-bar">
+                  <div class="completed-progress" id="completed-progress" style="width: 50%;">
+                    <div class="completed-progress-total">10</div>
+                  </div>
+                  <div class="remaining-progress" id="remaining-progress" style="width: 50%;">
+                    <div class="remaining-progress-total">10</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tasks-info-content">
+              <div class="tasks-info-title">Набрано баллов</div>
+
+              <div class="tasks-info-scored border">
+                <span class="red">790 <span class="total">-18</span></span> / 1000
+              </div>
+            </div>
+          </div>
+
+          <!-- <script>
+            document.addEventListener("DOMContentLoaded", (event) => {
+              // полоска заполнения выполненных\невыполненных заданий
+              $(document).ready(function () {
+                const totalTasks = 18;
+                let completedTasks = 12;
+                let remainingTasks = totalTasks - completedTasks;
+
+                function updateProgressBar() {
+                  const completedWidth = (completedTasks / totalTasks) * 100;
+                  const remainingWidth = 100 - completedWidth;
+
+                  // заполняем полоску
+                  document.querySelector('.completed-progress').style.width = `${completedWidth}%`;
+                  document.querySelector('.remaining-progress').style.width = `${remainingWidth}%`;
+
+                  // добавляем текст
+                  document.querySelector('.completed-progress-total').textContent = completedTasks;
+                  document.querySelector('.remaining-progress-total').textContent = remainingTasks;
+                }
+
+                updateProgressBar();
+              });
+            });
+          </script> -->
+        </div>
+
+        <div class="tasks-table">
+          <div class="tasks-table-header">
+            <div class="tasks-table-headline">Задание</div>
+            <div class="tasks-table-headline">Срок выполнения</div>
+          </div>
+
+          <div class="tasks-table-body">
+            <div class="tasks-table-item">
+              <div class="tasks-table-num">1</div>
+
+              <div class="tasks-table-content">
+                <a href="#" class="tasks-table-name">Родительские собрания в общеобразовательных школах, дошкольных учреждениях</a>
+
+                <div class="tasks-table-status timer">Осталось: 20:45:43</div>
+              </div>
+            </div>
+
+            <div class="tasks-table-item">
+              <div class="tasks-table-num">2</div>
+
+              <div class="tasks-table-content">
+                <a href="#" class="tasks-table-name">Печатные материалы</a>
+
+                <div class="tasks-table-status" data-term="2024-08-02 19:04">
+                  19.07.2024
+                </div>
+              </div>
+            </div>
+
+            <div class="tasks-table-item">
+              <div class="tasks-table-num">2</div>
+
+              <div class="tasks-table-content">
+                <a href="#" class="tasks-table-name">Печатные материалы</a>
+
+                <div class="tasks-table-status" data-term="2024-08-02 19:05">
+                  20.07.2024
+                </div>
+              </div>
+            </div>
+
+            <div class="tasks-table-item">
+              <div class="tasks-table-num">3</div>
+
+              <div class="tasks-table-content">
+                <a href="#" class="tasks-table-name">Печатные материалы</a>
+
+                <div class="tasks-table-status" data-term="2024-08-02 21:00">
+                  10.07.2024
+                </div>
+              </div>
+            </div>
+
+            <div class="tasks-table-item">
+              <div class="tasks-table-num">4</div>
+
+              <div class="tasks-table-content">
+                <a href="#" class="tasks-table-name">Печатные материалы</a>
+
+                <div class="tasks-table-status">
+                  25.07.2024
+                </div>
+              </div>
+            </div>
+
+            <div class="tasks-table-item green">
+              <div class="tasks-table-num">5</div>
+
+              <div class="tasks-table-content">
+                <a href="#" class="tasks-table-name">Открытые тренировки</a>
+
+                <div class="tasks-table-status">Сдано</div>
+              </div>
+            </div>
+
+            <div class="tasks-table-item red">
+              <div class="tasks-table-num">6</div>
+
+              <div class="tasks-table-content">
+                <a href="#" class="tasks-table-name">Посещение хоккейных матчей</a>
+
+                <div class="tasks-table-status">Не сдано</div>
+              </div>
+            </div>
+
+            <div class="tasks-table-item purple">
+              <div class="tasks-table-num">7</div>
+
+              <div class="tasks-table-content">
+                <a href="#" class="tasks-table-name">Родительские собрания в СУСУ</a>
+
+                <div class="tasks-table-status">Связаться</div>
+              </div>
+            </div>
+
+            <div class="tasks-table-item yellow">
+              <div class="tasks-table-num">8</div>
+
+              <div class="tasks-table-content">
+                <a href="#" class="tasks-table-name">Посещение хоккейных матчей</a>
+
+                <div class="tasks-table-status">Отправлено</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <script>
+          document.addEventListener("DOMContentLoaded", (event) => {
+              const dateElements = document.querySelectorAll("[data-term]");
+              const twentyFourHours = 24 * 60 * 60;
+
+              function updateTimerDisplay(timer, display) {
+                let hours = parseInt((timer / 3600) % 24, 10);
+                let minutes = parseInt((timer / 60) % 60, 10);
+                let seconds = parseInt(timer % 60, 10);
+
+                hours = hours < 10 ? "0" + hours : hours;
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = `Осталось ${hours}:${minutes}:${seconds}`;
+              }
+
+              function startTimer(duration, display, termTime) {
+                let timer = duration;
+
+                updateTimerDisplay(timer, display);
+
+                const interval = setInterval(() => {
+                  if (timer <= 0) {
+                    clearInterval(interval);
+                    display.textContent = "Не сдано";
+                    localStorage.removeItem(termTime);
+                  } else {
+                    timer--;
+                    updateTimerDisplay(timer, display);
+                    localStorage.setItem(termTime, timer);
+                  }
+                }, 1000);
+              }
+
+              function initializeTimers() {
+                const nowDate = dayjs();
+
+                dateElements.forEach((element) => {
+                  const termTime = element.getAttribute("data-term");
+                  const savedTime = localStorage.getItem(termTime);
+
+                  if (savedTime) {
+                    const termDate = dayjs(termTime);
+                    const elapsed = nowDate.diff(termDate, 'second');
+                    const remainingTime = twentyFourHours - elapsed;
+
+                    if (remainingTime > 0) {
+                      startTimer(remainingTime, element, termTime);
+                      element.classList.add('timer');
+                    } else {
+                      element.textContent = "Не сдано";
+                      localStorage.removeItem(termTime);
+                    }
+                  }
+                });
+              }
+
+              // Regularly check the date and time
+              setInterval(() => {
+                // дату и время
+                // дата и время из атрибута
+                // из атрибута вычитаем текущую
+                // если значение полученное от 0 до 24ч запускаем таймер
+                const nowDate = dayjs();
+                dateElements.forEach((element) => {
+                  const termTime = element.getAttribute("data-term");
+                  const termDate = dayjs(termTime);
+
+                  console.log(termDate)
+
+                  // Check if the current time is equal to the term time
+                  if (nowDate.isSame(termDate, 'minute') && !element.classList.contains('timer')) {
+                    const duration = twentyFourHours;
+                    startTimer(duration, element, termTime);
+                    element.classList.add('timer');
+                    // Save the termTime to localStorage
+                    localStorage.setItem(termTime, termTime);
+                  }
+                });
+              }, 1000); // Check every second
+
+              // Initialize timers from localStorage on page load
+              initializeTimers();
+          });
+      </script> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--#include file="inc-footer.html"-->

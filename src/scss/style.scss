@@ -9,7 +9,13 @@
 @import "./layout/inc-footer.scss";
 
 /* pages */
-@import "index";
+@import "login";
+@import "registr";
+@import "task";
+@import "tasks";
+@import "info";
+@import "result";
+@import "accept";
 
 * {
   box-sizing: border-box;
@@ -33,9 +39,9 @@ body {
   font-family: $baseFont;
   font-weight: 400;
   font-size: 1rem;
-  line-height: 1.42;
+  line-height: 1.2;
   color: #000;
-  background-color: #fff;
+  background-color: #F4F7F9;
 }
 
 #wrapper {
@@ -47,6 +53,11 @@ body {
   overflow: hidden;
   min-height: 100%;
   min-width: 100%;
+}
+
+.non-scroll {
+  overflow: hidden !important;
+  height: 100vh;
 }
 
 #middle {
