@@ -119,6 +119,10 @@ textarea.ui-input {
   min-width: 100% !important;
   width: auto !important;
   max-width: 300px !important;
+
+  ul {
+    margin-bottom: 0 !important;
+  }
 }
 
 // .jq-selectbox__select {
@@ -136,8 +140,7 @@ textarea.ui-input {
 
 .jq-selectbox__dropdown li {
   border-bottom: 1px solid #d9e0e4 !important;
-  padding-left: 16px !important;
-  padding: 20px;
+  padding: 16px;
   line-height: 1;
 
   &:last-child {
@@ -154,7 +157,7 @@ textarea.ui-input {
   background-repeat: no-repeat !important;
   width: 12px !important;
   height: 12px !important;
-  background-size: 12px;
+  background-size: 100%;
 }
 
 .ui-field {

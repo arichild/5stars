@@ -59,9 +59,28 @@
           </a>
         </div>
 
-        <button class="burger-btn">
-          <span></span>
-        </button>
+        <select type="text" class="header-select-nav ui-select">
+          <option value="1" class="active">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+
+        <!-- код для редиректа на другие страницы -->
+        <!-- его нужно будет доработать с конечными путями страниц -->
+        <!-- <script>
+          document.addEventListener("DOMContentLoaded", (event) => {
+            $(document).ready(function () {
+              $('.header-select-nav').on('change', function() {
+                const selectedValue = $(this).val()
+                const newPath = '/path/'
+
+                window.location.href = newPath + selectedValue
+              });
+            });
+          });
+        </script> -->
       </div>
     </div>
   </header>

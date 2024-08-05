@@ -32,13 +32,51 @@
     max-width: 68px;
     width: 100%;
 
-    img {
-      width: 10px;
-      height: 10px;
-      position: absolute;
-      right: 29px;
-      top: 10px;
+    .jq-selectbox__select-text {
+      padding-left: 10px;
+
+      &::after {
+        content: "";
+        background-image: url("../images/icon-star.svg");
+        background-repeat: no-repeat;
+        width: 10px;
+        height: 10px;
+        background-size: 10px;
+        position: absolute;
+        top: 7px;
+        left: 25px;
+      }
     }
+
+    .jq-selectbox__dropdown ul {
+      border-radius: 3px;
+      padding: 0 10px;
+    }
+
+    .jq-selectbox__dropdown li {
+      position: relative;
+      padding: 8px 0 !important;
+
+      &::after {
+        content: "";
+        background-image: url("../../images/icon-star.svg");
+        background-repeat: no-repeat;
+        width: 10px;
+        height: 10px;
+        background-size: 10px;
+        position: absolute;
+        top: 8px;
+        left: 14px;
+      }
+    }
+
+    // img {
+    //   width: 10px;
+    //   height: 10px;
+    //   position: absolute;
+    //   right: 29px;
+    //   top: 10px;
+    // }
   }
 
   canvas{

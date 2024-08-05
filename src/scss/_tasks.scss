@@ -187,7 +187,7 @@
       // padding-bottom: 20px;
       min-height: 92px;
       align-items: center;
-      overflow-y: hidden;
+      overflow: hidden;
 
       &.green {
         .tasks-table-num {
@@ -619,7 +619,7 @@
 
     &-table {
       &-header {
-        padding: 30px 20px 30px 50px;
+        padding: 30px 44px 30px 50px;
       }
 
       &-headline {
@@ -644,18 +644,18 @@
         flex: 0 0 calc(100% - 40px);
       }
 
-      &-name {
-        padding-left: 10px;
-        padding-right: 20px;
-        max-width: calc(100% - 100px);
-        flex: 0 0 calc(100% - 100px);
-      }
+      // &-name {
+      //   padding-left: 10px;
+      //   padding-right: 20px;
+      //   max-width: calc(100% - 100px);
+      //   flex: 0 0 calc(100% - 100px);
+      // }
 
-      &-status {
-        max-width: 100px;
-        flex: 0 0 100px;
-        padding-left: 0;
-      }
+      // &-status {
+      //   max-width: 100px;
+      //   flex: 0 0 100px;
+      //   padding-left: 0;
+      // }
     }
   }
 }
@@ -715,6 +715,32 @@
     &-table {
       font-size: 16px;
       margin: 0 -20px;
+      overflow-x: auto;
+
+      &-header {
+        width: 576px;
+        padding-right: 30px;
+      }
+
+      &-body {
+        width: 576px;
+      }
+
+      &-name {
+        max-width: calc(100% - 144px);
+        flex: 0 0 calc(100% - 144px);
+        padding-right: 20px;
+      }
+
+      &-status {
+        max-width: 144px;
+        flex: 0 0 144px;
+        padding-left: 0;
+      }
+
+      // &-item {
+
+      // }
     }
   }
 }

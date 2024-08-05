@@ -135,6 +135,90 @@
       top: -2px;
     }
   }
+
+  &-select {
+    &-nav {
+      display: none;
+      height: 40px;
+      line-height: 38px;
+      border: 1px solid #1F313C;
+      background-color: transparent;
+      border-radius: 3px;
+      width: 62px;
+      font-size: 24px;
+      font-weight: 400;
+      color: #fff;
+
+      &.opened {
+        .jq-selectbox__trigger-arrow {
+          transform: translate(0, -50%) rotate(180deg) !important;
+        }
+      }
+
+      .jq-selectbox__select-text {
+        padding-left: 10px;
+
+        &::after {
+          content: "";
+          background-image: url("../images/icon-star.svg");
+          background-repeat: no-repeat;
+          width: 10px;
+          height: 10px;
+          background-size: 10px;
+          position: absolute;
+          top: 7px;
+          left: 25px;
+        }
+      }
+
+      .jq-selectbox__trigger-arrow {
+        background-image: url(../images/icon-arrow-gray.svg)!important;
+      }
+
+      .jq-selectbox__dropdown {
+        top: calc(100% + 2px);
+      }
+
+      .jq-selectbox__dropdown ul {
+        border: 1px solid #1F313C !important;
+        border-radius: 3px;
+        background-color: #15222A !important;
+        padding: 4px 10px;
+      }
+
+      .jq-selectbox__dropdown li {
+        padding: 8px 0 !important;
+        // text-align: center;
+        border-color: #1F313C !important;
+        color: #617987;
+        position: relative;
+
+        &::after {
+          content: "";
+          background-image: url("../../images/icon-star.svg");
+          background-repeat: no-repeat;
+          width: 10px;
+          height: 10px;
+          background-size: 10px;
+          position: absolute;
+          top: 8px;
+          left: 14px;
+        }
+
+        &.active {
+          color: #fff;
+        }
+      }
+    }
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 10px;
+      height: 10px;
+    }
+  }
 }
 
 .burger-btn {
@@ -296,6 +380,12 @@
       img {
         height: 50px;
         width: 100%;
+      }
+    }
+
+    &-select {
+      &-nav {
+        display: block;
       }
     }
   }

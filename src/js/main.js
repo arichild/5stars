@@ -37,6 +37,7 @@ $( document ).ready(function() {
   // validate
   $.validator.messages.required = 'Заполните поле';
   $.validator.messages.number = 'Тольцо цифры';
+  $.validator.messages.email = 'Введите корректный email';
 
   jQuery.validator.addMethod("lettersonly", function(value, element) {
     return this.optional(element) || /^([а-яё ]+|[a-z ]+)$/i.test(value);
