@@ -17,6 +17,10 @@
     }
   }
 
+  .ui-btn {
+    margin-right: 16px;
+  }
+
 
   &-call {
     &-title {
@@ -58,7 +62,8 @@
 
     &-submit {
       display: flex;
-      justify-content: space-between;
+      // justify-content: space-between;
+      align-items: center;
     }
 
     .ui-fields {
@@ -225,9 +230,11 @@
     &-form {
       &-submit {
         flex-direction: column;
+        align-items: normal;
 
         .ui-btn {
           margin-bottom: 10px;
+          margin-right: 0;
         }
       }
     }

@@ -86,7 +86,7 @@
               <div class="tasks-table-content">
                 <a href="#" class="tasks-table-name">Печатные материалы</a>
 
-                <div class="tasks-table-status" data-term="2024-08-02 19:04">
+                <div class="tasks-table-status" data-term="2024-08-06T11:14:00Z">
                   19.07.2024
                 </div>
               </div>
@@ -98,7 +98,7 @@
               <div class="tasks-table-content">
                 <a href="#" class="tasks-table-name">Печатные материалы</a>
 
-                <div class="tasks-table-status" data-term="2024-08-02 19:05">
+                <div class="tasks-table-status" data-term="2024-08-06T11:15:00Z">
                   20.07.2024
                 </div>
               </div>
@@ -110,7 +110,7 @@
               <div class="tasks-table-content">
                 <a href="#" class="tasks-table-name">Печатные материалы</a>
 
-                <div class="tasks-table-status" data-term="2024-08-02 21:00">
+                <div class="tasks-table-status" data-term="2024-08-06T15:27:00Z">
                   10.07.2024
                 </div>
               </div>
@@ -169,92 +169,57 @@
             </div>
           </div>
         </div>
-        <!-- <script>
+        <script>
           document.addEventListener("DOMContentLoaded", (event) => {
-              const dateElements = document.querySelectorAll("[data-term]");
-              const twentyFourHours = 24 * 60 * 60;
+            $(document).ready(function() {
+              function startTimer(targetDate, statusElement) {
+                let timer = Math.floor(targetDate.diff(dayjs()) / 1000); // переводим миллисекунды в секунды
 
-              function updateTimerDisplay(timer, display) {
-                let hours = parseInt((timer / 3600) % 24, 10);
-                let minutes = parseInt((timer / 60) % 60, 10);
-                let seconds = parseInt(timer % 60, 10);
+                const interval = setInterval(function () {
+                  const hours = Math.floor(timer / 3600);
+                  const minutes = Math.floor((timer % 3600) / 60);
+                  const seconds = timer % 60;
 
-                hours = hours < 10 ? "0" + hours : hours;
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
+                  const formattedHours = hours < 10 ? "0" + hours : hours;
+                  const formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
+                  const formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
 
-                display.textContent = `Осталось ${hours}:${minutes}:${seconds}`;
-              }
+                  $(statusElement).addClass('timer')
+                  $(statusElement).text(`Осталось: ${formattedHours}:${formattedMinutes}:${formattedSeconds}`);
 
-              function startTimer(duration, display, termTime) {
-                let timer = duration;
-
-                updateTimerDisplay(timer, display);
-
-                const interval = setInterval(() => {
-                  if (timer <= 0) {
+                  if (--timer < 0) {
                     clearInterval(interval);
-                    display.textContent = "Не сдано";
-                    localStorage.removeItem(termTime);
-                  } else {
-                    timer--;
-                    updateTimerDisplay(timer, display);
-                    localStorage.setItem(termTime, timer);
+                    $(statusElement).closest('.tasks-table-item').addClass('red')
+                    $(statusElement).text("Не сдано");
                   }
                 }, 1000);
               }
 
-              function initializeTimers() {
-                const nowDate = dayjs();
+              function checkTasks() {
+                $('.tasks-table-status').each(function() {
+                  const targetDateAttr = $(this).data('term');
 
-                dateElements.forEach((element) => {
-                  const termTime = element.getAttribute("data-term");
-                  const savedTime = localStorage.getItem(termTime);
+                  if (targetDateAttr) {
+                    const targetDate = dayjs(targetDateAttr);
+                    const now = dayjs();
+                    const difference = targetDate.diff(now);
 
-                  if (savedTime) {
-                    const termDate = dayjs(termTime);
-                    const elapsed = nowDate.diff(termDate, 'second');
-                    const remainingTime = twentyFourHours - elapsed;
-
-                    if (remainingTime > 0) {
-                      startTimer(remainingTime, element, termTime);
-                      element.classList.add('timer');
-                    } else {
-                      element.textContent = "Не сдано";
-                      localStorage.removeItem(termTime);
+                    // Проверяем, что разница меньше или равна 24 часам
+                    if (difference > 0 && difference <= 24 * 60 * 60 * 1000) {
+                      if (!$(this).data('timerStarted')) {
+                        startTimer(targetDate, this);
+                        $(this).data('timerStarted', true); // Устанавливаем флаг, чтобы не запускать таймер повторно
+                      }
                     }
                   }
                 });
               }
 
-              // Regularly check the date and time
-              setInterval(() => {
-                // дату и время
-                // дата и время из атрибута
-                // из атрибута вычитаем текущую
-                // если значение полученное от 0 до 24ч запускаем таймер
-                const nowDate = dayjs();
-                dateElements.forEach((element) => {
-                  const termTime = element.getAttribute("data-term");
-                  const termDate = dayjs(termTime);
-
-                  console.log(termDate)
-
-                  // Check if the current time is equal to the term time
-                  if (nowDate.isSame(termDate, 'minute') && !element.classList.contains('timer')) {
-                    const duration = twentyFourHours;
-                    startTimer(duration, element, termTime);
-                    element.classList.add('timer');
-                    // Save the termTime to localStorage
-                    localStorage.setItem(termTime, termTime);
-                  }
-                });
-              }, 1000); // Check every second
-
-              // Initialize timers from localStorage on page load
-              initializeTimers();
+              // Проверяем каждую секунду
+              setInterval(checkTasks, 1000);
+            });
           });
-      </script> -->
+        </script>
       </div>
     </div>
   </div>

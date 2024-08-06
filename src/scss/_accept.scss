@@ -10,6 +10,12 @@
     }
   }
 
+  .ui-btns {
+    .ui-btn {
+      font-size: 16px;
+    }
+  }
+
   &-file {
     padding: 18px 47px;
     background-color: #F3F4F5;
@@ -283,6 +289,7 @@
         // height: 56px;
         // line-height: 56px;
         margin-right: 20px;
+        font-size: 16px;
 
         &:last-child {
           margin-right: 0;

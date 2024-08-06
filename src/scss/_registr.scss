@@ -15,9 +15,29 @@
     }
   }
 
-  // .ui-btn.delete-group {
-  //   line-height: 46px;
-  // }
+  .ui-btn.delete-group {
+    max-width: 126px;
+    width: 100%;
+    padding-left: 41px;
+    padding-right: 10px;
+    // height: 48px;
+    // line-height: 46px;
+    font-weight: 700;
+    font-size: 14px;
+    margin-right: 0;
+    margin-left: auto;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      left: 14px;
+      background-image: url("../images/icon-delete.svg");
+      width: 20px;
+      height: 20px;
+    }
+  }
 
   .ui-btn.delete-coach {
     max-width: 126px;
@@ -40,6 +60,20 @@
       height: 20px;
     }
   }
+
+  .ui-btns {
+    .ui-btn {
+      font-weight: 700;
+    }
+  }
+}
+
+.xdsoft_datetimepicker.xdsoft_noselect.xdsoft_.hide {
+  display: none !important;
+}
+
+.xdsoft_datetimepicker.xdsoft_noselect.xdsoft_.open {
+  display: block !important;
 }
 
 @media(max-width: 1440.99px) {
@@ -65,6 +99,8 @@
       padding-left: 0;
       height: 44px;
       line-height: 42px;
+      padding-right: 0;
+      max-width: none;
     }
 
     .ui-btn.add-group {

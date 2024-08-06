@@ -142,6 +142,7 @@ $( document ).ready(function() {
   function setCalendar(array) {
     array.forEach(element => {
       const parent = $(element).closest('span.calendar');
+      const input = parent.find('input')
       const img = $(parent).find('img');
 
       jQuery(element).datetimepicker({
@@ -152,20 +153,23 @@ $( document ).ready(function() {
         lang: "ru",
         mask: '99.99.9999',
 
-        // onShow: function() {
-        //   $(element).datetimepicker('hide')
-        //  },
-
-        onClose: function()
-         {
+        onClose: function() {
           $(element).valid()
-         },
-      });
+        },
 
-      // img.on( "click", function() {
-      //   console.log('cvxcvxcv')
-      //   jQuery(element).datetimepicker('show'); //support hide,show and destroy command
-      // });
+        onGenerate: function() {
+          const calendar = $(this)
+
+          img.on("click", function() {
+            calendar.removeClass('hide')
+            input.datetimepicker('show')
+          });
+
+          input.on("click", function() {
+            calendar.addClass('hide')
+          });
+        }
+      });
     });
 
     $.datetimepicker.setLocale("ru");
