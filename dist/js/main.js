@@ -94,7 +94,28 @@ $( document ).ready(function() {
       });
     }
   }
+
+  function setCalendarMask() {
+    let calendar = document.querySelectorAll('input.calendar')
+
+    if(calendar.length) {
+      calendar.forEach(element => {
+        IMask(element, {
+          mask: [
+            {
+              mask: Date,
+              min: new Date(1990, 0, 1),
+              // max: new Date(2020, 0, 1),
+              lazy: false
+            }
+          ],
+        })
+      });
+    }
+  }
+
   setPhoneMask()
+  setCalendarMask()
 
   // $('.input-file input[type=file]').on('change', function(){
   //   let file = this.files[0];
@@ -151,7 +172,7 @@ $( document ).ready(function() {
         timepicker: false,
         scrollInput: false,
         lang: "ru",
-        mask: '99.99.9999',
+        // mask: '99.99.9999',
 
         onClose: function() {
           $(element).valid()
