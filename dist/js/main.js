@@ -380,4 +380,34 @@ $( document ).ready(function() {
 
     currentContainer.remove();
   });
+
+  // иконка аккаунта
+  (function() {
+    const accountIcons = document.querySelectorAll('.header-links-item__discottect');
+    
+    if (!accountIcons.length) return;
+  
+    accountIcons.forEach(accountIcon => {
+      const accountmenu = accountIcon.querySelector('.header-links-disconnect');
+  
+      if (!accountmenu) return;
+  
+      accountIcon.addEventListener('click', (event) => {
+        console.log('click');
+        accountmenu.classList.toggle('hidden');
+        event.stopPropagation(); // предотвращаем всплытие события
+      });
+  
+      document.addEventListener('click', (event) => {
+        if (!accountmenu.classList.contains('hidden') && !accountmenu.contains(event.target) && !accountIcon.contains(event.target)) {
+          accountmenu.classList.add('hidden');
+        }
+      });
+  
+      accountmenu.addEventListener('click', (event) => {
+        event.stopPropagation(); // предотвращаем всплытие события при клике внутри меню
+      });
+    });
+  })();
+  
 });
