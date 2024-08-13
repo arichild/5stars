@@ -151,7 +151,9 @@ $( document ).ready(function() {
   });
 
   $('.ui-select').styler({
-    // selectPlaceholder: ""
+    placeholder: function() {
+      return $(this).find('option[disabled]:selected').text();
+    }
   });
 
   $('select.ui-select').on('change', function() {
@@ -380,4 +382,52 @@ $( document ).ready(function() {
 
     currentContainer.remove();
   });
+
+  // выйти
+  (function() {
+    const disconnectIcons = document.querySelectorAll('.header-links-item__discottect');
+  
+    disconnectIcons.forEach(icon => {
+      const disconnectElement = icon.querySelector('.header-links-disconnect');
+  
+      icon.addEventListener('click', (event) => {
+        event.stopPropagation();
+        disconnectElement.classList.toggle('hidden');
+      });
+  
+      document.addEventListener('click', (event) => {
+        if (!disconnectElement.contains(event.target)) {
+          disconnectElement.classList.add('hidden');
+        }
+      });
+    });
+  })();
+
+  // сравнение результатов
+  (function() {
+    // Функция для обновления состояния зависимых select
+    function updateDependentSelect(triggerSelect, dependentSelect) {
+      if ($(triggerSelect).val()) {
+        $(dependentSelect).prop('disabled', false).trigger('refresh');
+      } else {
+        $(dependentSelect).prop('disabled', true).val('').trigger('refresh');
+      }
+    }
+
+    // Обработчик изменения select1
+    $('#select1').on('change', function() {
+      updateDependentSelect('#select1', '#select3');
+    });
+
+    // Обработчик изменения select2
+    $('#select2').on('change', function() {
+      updateDependentSelect('#select2', '#select4');
+    });
+
+    // Инициальное состояние
+    updateDependentSelect('#select1', '#select3');
+    updateDependentSelect('#select2', '#select4');
+  })();
+  
+
 });

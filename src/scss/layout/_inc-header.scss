@@ -47,6 +47,7 @@
 
       span {
         position: relative;
+        display: inline-block;
       }
 
       img {
@@ -56,6 +57,7 @@
         top: 8px;
         opacity: .5;
         transition: opacity .2s ease;
+        font-size: 0;
       }
 
       &.active {
@@ -285,11 +287,13 @@
 
   &-icons {
     &-mobile {
+      font-size: 0;
       &-item {
         position: relative;
-        margin-right: 8px;
+        display: inline-block;
+        margin-right: 12px;
 
-        &:last-of-type {
+        &:last-child {
           margin-right: 0;
         }
       }
@@ -408,6 +412,12 @@
           }
         }
       }
+
+      &-item {
+        padding-left: 30px;
+        padding-right: 40px;
+        font-size: 38px;
+      }
     }
   }
 }
@@ -445,6 +455,17 @@
         img {
           top: 5px;
         }
+      }
+
+      &-item {
+        padding-left: 10px;
+        padding-right: 20px;
+        font-size: 22px;
+        display: block;
+        margin-bottom: 20px;
+        font-size: 30px;
+        text-align: center;
+        padding-left: 0;
       }
 
       &.active {

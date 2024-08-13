@@ -151,7 +151,9 @@ $( document ).ready(function() {
   });
 
   $('.ui-select').styler({
-    // selectPlaceholder: ""
+    placeholder: function() {
+      return $(this).find('option[disabled]:selected').text();
+    }
   });
 
   $('select.ui-select').on('change', function() {
@@ -381,33 +383,51 @@ $( document ).ready(function() {
     currentContainer.remove();
   });
 
-  // иконка аккаунта
+  // выйти
   (function() {
-    const accountIcons = document.querySelectorAll('.header-links-item__discottect');
-    
-    if (!accountIcons.length) return;
+    const disconnectIcons = document.querySelectorAll('.header-links-item__discottect');
   
-    accountIcons.forEach(accountIcon => {
-      const accountmenu = accountIcon.querySelector('.header-links-disconnect');
+    disconnectIcons.forEach(icon => {
+      const disconnectElement = icon.querySelector('.header-links-disconnect');
   
-      if (!accountmenu) return;
-  
-      accountIcon.addEventListener('click', (event) => {
-        console.log('click');
-        accountmenu.classList.toggle('hidden');
-        event.stopPropagation(); // предотвращаем всплытие события
+      icon.addEventListener('click', (event) => {
+        event.stopPropagation();
+        disconnectElement.classList.toggle('hidden');
       });
   
       document.addEventListener('click', (event) => {
-        if (!accountmenu.classList.contains('hidden') && !accountmenu.contains(event.target) && !accountIcon.contains(event.target)) {
-          accountmenu.classList.add('hidden');
+        if (!disconnectElement.contains(event.target)) {
+          disconnectElement.classList.add('hidden');
         }
-      });
-  
-      accountmenu.addEventListener('click', (event) => {
-        event.stopPropagation(); // предотвращаем всплытие события при клике внутри меню
       });
     });
   })();
+
+  // сравнение результатов
+  (function() {
+    // Функция для обновления состояния зависимых select
+    function updateDependentSelect(triggerSelect, dependentSelect) {
+      if ($(triggerSelect).val()) {
+        $(dependentSelect).prop('disabled', false).trigger('refresh');
+      } else {
+        $(dependentSelect).prop('disabled', true).val('').trigger('refresh');
+      }
+    }
+
+    // Обработчик изменения select1
+    $('#select1').on('change', function() {
+      updateDependentSelect('#select1', '#select3');
+    });
+
+    // Обработчик изменения select2
+    $('#select2').on('change', function() {
+      updateDependentSelect('#select2', '#select4');
+    });
+
+    // Инициальное состояние
+    updateDependentSelect('#select1', '#select3');
+    updateDependentSelect('#select2', '#select4');
+  })();
   
+
 });
