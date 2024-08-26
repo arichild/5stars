@@ -141,7 +141,18 @@
         margin-left: 0;
         width: 36px;
         height: 36px;
-      }
+      }     
+
+      &::after {
+        content: "";
+        width: 1px;
+        height: 28px;
+        background: #1F313C;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+      }     
     }
 
     &-disconnect {
@@ -206,9 +217,9 @@
       display: none;
       height: 40px;
       line-height: 38px;
-      border: 1px solid #1F313C;
+      // border: 1px solid #1F313C;
       background-color: transparent;
-      border-radius: 3px;
+      // border-radius: 3px;
       width: 62px;
       font-size: 24px;
       font-weight: 400;
@@ -218,6 +229,11 @@
         .jq-selectbox__trigger-arrow {
           transform: translate(0, -50%) rotate(180deg) !important;
         }
+      }
+
+      .jq-selectbox__select {
+        border: 1px solid #1F313C;
+        border-radius: 3px;
       }
 
       .jq-selectbox__select-text {

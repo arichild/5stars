@@ -102,12 +102,116 @@ textarea.ui-input {
   resize: none;
 }
 
+.ui-checkbox {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #D9E0E4;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &.checked {   
+    background-color: #40A6E2; 
+    border-color: #40A6E2;
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      content: '';
+      background-image: url(../images/icon-check.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 24px 24px;
+      width: 24px;
+      height: 24px;
+    
+    }
+  }
+
+  &-label {
+    font-size: 14px;
+    font-weight: 300;
+    color: #253237;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+}
+
+.select2-container {
+  width: 100% !important;  
+}
+
+.select2-dropdown {
+  border-color: #D9E0E4;
+}
+
+.select2-results__option {
+  padding: 16px;
+}
+
+.select2-results__option:not(:last-child) {
+  border-bottom: 1px solid #D9E0E4;
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+  background-color: #40A6E2;
+}
+
+.select2-container--default .select2-selection--multiple {
+  border: 1px solid #D9E0E4;
+  border-radius: 3px;
+  min-height: 48px !important;
+  outline: none;
+  overflow-x: auto;
+  padding-right: 16px;
+  // overflow-y: hidden;
+  cursor: pointer;
+
+  @media(max-width: 1440.99px) {
+    min-height: 46px !important;
+  }
+
+  @media(max-width: 1366.99px) {
+    min-height: 44px !important;
+  }
+
+  @media(max-width: 1024.99px) {
+    min-height: 42px !important;
+  }
+
+  @media(max-width: 768.99px) {
+    min-height: 40px !important;
+  }
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+  border: 1px solid #D9E0E4;
+  overflow-y: hidden;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice__display {
+  font-size: 16px;
+  font-weight: 400;
+}
+
 .ui-select {
   font-family: "Ubuntu", sans-serif;
   line-height: 46px;
   padding: 0;
   margin: 0;
   cursor: pointer;
+  transition: transform 0.3s;
+
+  
+  &.opened {
+    .jq-selectbox__trigger-arrow {
+      transform: translate(0, -50%) rotate(180deg) !important;
+    }
+  }
 
 
   &__transparent {   
@@ -677,6 +781,10 @@ textarea.ui-input {
   background-color: #F3F4F5;
   margin-right: 32px;
   cursor: pointer;
+
+  &:has(.error) {
+    border-color: #ff7070;
+  }
 
   .preview {
     display: none;

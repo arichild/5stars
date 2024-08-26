@@ -156,6 +156,10 @@ $( document ).ready(function() {
     }
   });
 
+  $('.ui-checkbox').styler();
+
+  $('.js-example-basic-multiple').select2();
+
   $('select.ui-select').on('change', function() {
     setTimeout(function() {
       $('select.ui-select').trigger('refresh');
