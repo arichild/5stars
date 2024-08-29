@@ -158,7 +158,9 @@ $( document ).ready(function() {
 
   $('.ui-checkbox').styler();
 
-  $('.js-example-basic-multiple').select2();
+  $('.js-example-basic-multiple').select2({
+    width: '100%',
+  });
 
   $('select.ui-select').on('change', function() {
     setTimeout(function() {
