@@ -327,6 +327,11 @@
             align-items: center;
             white-space: nowrap;
 
+            span {
+                white-space: normal;
+                padding-right: 24px;
+            }
+
             &__compairson {
                 padding: 22px 10px;
                 border: none !important;
@@ -471,6 +476,9 @@
 
         .ui-btn {
             line-height: 43px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
     }
 }
