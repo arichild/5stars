@@ -434,6 +434,106 @@ $( document ).ready(function() {
     updateDependentSelect('#select1', '#select3');
     updateDependentSelect('#select2', '#select4');
   })();
-  
+
+  (function() {
+    function syncRowHeights() {
+      const fixedRows = document.querySelectorAll('#fixedTable tr');
+      const scrollRows = document.querySelectorAll('#scrollTable tr');
+      
+      fixedRows.forEach((row, index) => {
+        const scrollRow = scrollRows[index];
+        if (scrollRow) {
+          const fixedRowHeight = row.getBoundingClientRect().height;
+          const scrollRowHeight = scrollRow.getBoundingClientRect().height;
+          const maxHeight = Math.max(fixedRowHeight, scrollRowHeight);
+          row.style.height = `${maxHeight}px`;
+          scrollRow.style.height = `${maxHeight}px`;
+        }
+      });
+    }
+    
+    window.addEventListener('load', syncRowHeights);
+    window.addEventListener('resize', syncRowHeights);
+  })();  
+
+  // скролл снизу и сверху блока
+  (function() {
+    const container = document.querySelector('.scroll-wrapper');
+    const content = document.querySelector('.scroll-content');
+    const scrollTop = document.querySelector('.scroll-top');
+    const scrollBottom = document.querySelector('.scroll-bottom');
+
+    if(!container || !content || !scrollTop || !scrollBottom) return;
+
+    const scrollThumbTop = scrollTop.querySelector('.scroll-thumb');
+    const scrollThumbBottom = scrollBottom.querySelector('.scroll-thumb');  
+
+    function updateScrollVisibility() {
+      const scrollWidth = content.scrollWidth - content.offsetWidth;
+      scrollTop.classList.toggle('visible', scrollWidth > 0);
+      scrollBottom.classList.toggle('visible', scrollWidth > 0);
+      content.classList.toggle('scroll-visibled', scrollWidth > 0);
+    }
+
+    function updateScrollThumb() {
+      const scrollWidth = content.scrollWidth - content.offsetWidth;
+      const scrollLeft = content.scrollLeft;
+      const containerWidth = container.offsetWidth;
+      const contentWidth = content.scrollWidth;
+      const trackWidth = containerWidth / contentWidth * 100;
+      const thumbWidth = Math.max(20, trackWidth);
+      const thumbLeft = (scrollLeft / (contentWidth - containerWidth)) * (100 - thumbWidth);
+
+      scrollThumbTop.style.width = `${thumbWidth}%`;
+      scrollThumbTop.style.left = `${thumbLeft}%`;
+      scrollThumbBottom.style.width = `${thumbWidth}%`;
+      scrollThumbBottom.style.left = `${thumbLeft}%`;
+    }
+
+    function handleScrollThumbDrag(e, thumb) {
+      const startX = e.clientX - thumb.offsetLeft;
+      const scrollWidth = content.scrollWidth - content.offsetWidth;
+      const containerWidth = container.offsetWidth;
+      const contentWidth = content.scrollWidth;
+
+      function moveThumb(e) {
+        const x = e.clientX - startX;
+        const trackWidth = thumb.parentElement.offsetWidth;
+        const thumbWidth = thumb.offsetWidth;
+        const maxLeft = trackWidth - thumbWidth;
+        const left = Math.max(0, Math.min(maxLeft, x));
+        const scrollLeft = (left / maxLeft) * (contentWidth - containerWidth);
+
+        content.scrollLeft = scrollLeft;
+        updateScrollThumb();
+      }
+
+      function stopMoveThumb() {
+        document.removeEventListener('mousemove', moveThumb);
+        document.removeEventListener('mouseup', stopMoveThumb);
+      }
+
+      document.addEventListener('mousemove', moveThumb);
+      document.addEventListener('mouseup', stopMoveThumb);
+    }
+
+    function handleResize() {
+      updateScrollVisibility();
+      updateScrollThumb();
+    }
+
+    content.addEventListener('scroll', () => {
+      updateScrollVisibility();
+      updateScrollThumb();
+    });
+
+    scrollThumbTop.addEventListener('mousedown', (e) => handleScrollThumbDrag(e, scrollThumbTop));
+    scrollThumbBottom.addEventListener('mousedown', (e) => handleScrollThumbDrag(e, scrollThumbBottom));
+
+    window.addEventListener('resize', handleResize);
+
+    updateScrollVisibility();
+    updateScrollThumb();
+  })();
 
 });
