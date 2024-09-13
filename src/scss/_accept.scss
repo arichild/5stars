@@ -317,6 +317,11 @@
       justify-content: space-between;
       padding: 22px 20px;
 
+      &.no-bordered {
+        border: none;
+        background-color: transparent;
+      }
+
       &.empty {
         align-items: center;
         justify-content: center;

@@ -1,0 +1,177 @@
+<!--#include file="inc-header2.html"-->
+<div class="middle" id="middle">
+  <div class="page-wrapper">
+    <div class="container">
+      <div class="info">
+        <div class="ui-title">
+          Общая информация
+          <button class="trigger-alert success">Успех</button>
+          <button class="trigger-alert error">Ошибка</button>
+        </div>
+        <div class="white-block-list">
+          <div class="ui-alert"></div>
+          <div class="white-block big">
+            <div class="white-block-header">
+              <div class="white-block-title uppercase">Основные положения</div>
+            </div>
+            <div class="white-block-body">
+              <div class="white-block-txt">
+                <p>
+                  При регистрации вы указывали ответственного за ведение. Вся связь и коммуникация с ФХБ осуществиться через указанного вами человека, в случае не возможности связаться с этим человеком, по усмотрению ФХБ коммуникация будет осуществиться через указоного директора школы.
+                </p>
+                <h3>Нарушения регламента выполнения “5 звезд”</h3>
+                <p>
+                  При регистрации вы указывали ответственного за ведение. Вся связь и коммуникация с ФХБ осуществиться через указанного вами человека, в случаи не возможности связаться с этим человеком, по усмотрению ФХБ коммуникация будет осуществиться через указоного директора школы.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="white-block small">
+            <div class="white-block-header">
+              <div class="white-block-title uppercase">Статистика</div>
+              <div class="info-select">
+                <select type="text" class="ui-input ui-select small">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+                <!-- <img src="./images/icon-star.svg" alt=""> -->
+              </div>
+            </div>
+            <div class="white-block-body charts">
+              <div class="ui-charts">
+                <div class="ui-charts-title">Показатели</div>
+                <div class="ui-charts-content">
+                  <canvas class="ui-doughnut" id="indicators"></canvas>
+                </div>
+              </div>
+              <div class="ui-charts">
+                <div class="ui-charts-title">Количество баллов</div>
+                <div class="ui-charts-content">
+                  <canvas class="ui-doughnut" id="points"></canvas>
+                </div>
+              </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script>
+                const indicatorsChart = document.getElementById('indicators');
+                const pointsChart = document.getElementById('points');
+  
+                const dataIndicators = {
+                  labels: [
+                    'Осталось',
+                    'Выполнено',
+                    'Не выполнено'
+                  ],
+                  datasets: [{
+                    label: '',
+                    data: [55, 12, 6],
+                    backgroundColor: [
+                      'rgb(151, 71, 255)',
+                      'rgb(33, 177, 76)',
+                      'rgb(237, 43, 50)'
+                    ],
+                    hoverOffset: 4
+                  }]
+                };
+  
+                const dataPoints = {
+                  labels: [
+                    'Набрано',
+                    'Осталось',
+                  ],
+                  datasets: [{
+                    label: '',
+                    data: [128, 42],
+                    backgroundColor: [
+                      'rgb(33, 177, 76)',
+                      'rgb(237, 43, 50)'
+                    ],
+                    hoverOffset: 4
+                  }]
+                };
+  
+                const options = {
+                  plugins: {
+                    legend: {
+                      display: false
+                    }
+                  }
+                };
+  
+                const indicators = document.querySelector("#indicators");
+                if(indicators) {
+                  const chartIndicators = new Chart(indicators, {
+                    type: "doughnut",
+                    data: dataIndicators,
+                    options,
+                    plugins: [{
+                      beforeInit: function(chart, args, options) {
+                        // Make sure we're applying the legend to the right chart
+                        if (chart.canvas.id === "indicators") {
+                          const div = document.createElement('div');
+                          div.classList.add('chart-info');
+                          chart.data.labels.forEach((label, i) => {
+                            div.innerHTML += `
+                              <div class="chart-item">
+                                <div class="chart-color" style="background-color: ${chart.data.datasets[0].backgroundColor[i]}"></div>
+  
+                                <div class="chart-text">
+                                  <div class="chart-title">${ label }</div>
+                                  <div class="chart-subtitle">${chart.data.datasets[0].data[i]} показателей</div>
+                                </div>
+                              </div>
+                            `;
+                          });
+  
+                          return indicators.closest(".ui-charts-content").prepend(div);
+                        }
+                        return;
+                      }
+                    }]
+                  });
+                }
+  
+                const points = document.querySelector("#points");
+                if(points) {
+                  const chartIndicators = new Chart(points, {
+                    type: "doughnut",
+                    data: dataPoints,
+                    options,
+                    plugins: [{
+                      beforeInit: function(chart, args, options) {
+                        // Make sure we're applying the legend to the right chart
+                        if (chart.canvas.id === "points") {
+                          const div = document.createElement('div');
+                          div.classList.add('chart-info');
+                          chart.data.labels.forEach((label, i) => {
+                            div.innerHTML += `
+                              <div class="chart-item">
+                                <div class="chart-color" style="background-color: ${chart.data.datasets[0].backgroundColor[i]}"></div>
+  
+                                <div class="chart-text">
+                                  <div class="chart-title">${ label }</div>
+                                  <div class="chart-subtitle">${chart.data.datasets[0].data[i]} балла</div>
+                                </div>
+                              </div>
+                            `;
+                          });
+  
+                          return points.closest(".ui-charts-content").prepend(div);
+                        }
+                        return;
+                      }
+                    }]
+                  });
+                }
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--#include file="inc-footer.html"-->
+<!-- <div class="ui-alert"></div> -->

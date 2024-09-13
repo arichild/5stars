@@ -1,0 +1,144 @@
+<!--#include file="inc-header2.html"-->
+<div class="middle" id="middle">
+  <div class="page-wrapper">
+    <div class="container">
+      <div class="ui-title">Родительские собрания в общеобразовательных школах, дошкольных учреждениях</div>
+      <div class="answer-navigation">
+        <a href="#" class="answer-navigation-prev ui-btn small blue">Предыдущий вопрос</a>
+        <div class="answer-navigation-main">
+          <a href="#" class="prev">
+            <img src="./images/icon-prev.svg" alt="prev">
+          </a>
+          <div class="answer-navigation-title">
+            <img src="./images/logo-2.svg" alt="logo">
+            Юность-Минск
+            <div class="answer-navigation-status review">на проверке</div>
+          </div>
+          <a href="#" class="next">
+            <img src="./images/icon-next.svg" alt="next">
+          </a>
+        </div>
+        <a href="#" class="answer-navigation-next ui-btn small blue">Следующий вопрос</a>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-sm-6">
+          <div class="answer-card">
+            <div class="accept-file" data-name="file1">
+              <div class="accept-file-title">просмотреть файлы</div>
+              <div class="accept-file-subtitle">1 фото, 7 видео</div>
+              <div class="accept-file-list">
+                <img src="./images/icon-files.svg" class="icon" alt="">
+                <div class="accept-file-item">
+                  <img src="./images/farba.svg" class="preview" alt="Preview">
+                </div>
+                <div class="accept-file-item doc"></div>
+                <div class="accept-file-item doc"></div>
+              </div>
+            </div>
+            <script>
+              document.addEventListener("DOMContentLoaded", (event) => {
+                $(document).ready(function () {
+                  const popup = $('.accept-popup-bg');                  
+    
+                  // открыть попап
+                  $('.accept-file').on('click', function(event) {
+                    const currentBlock = $('.accept-file.open');                
+    
+                    popup.removeClass('hidden')
+                    $('body').css('overflow', 'hidden');
+                  });   
+                  
+                  // закрыть попап
+                  $('.accept-popup-close, .ui-btn.close').on('click', function() {                  
+                    const currentBlock = $('.accept-file.open');
+               
+                    currentBlock.removeClass('open');
+                    popup.addClass('hidden');
+                    $('body').css('overflow', '');
+                  });
+                 
+                });
+              });
+            </script>
+            <div class="accept-popup-bg hidden">
+              <div class="accept-popup">
+                <div class="accept-popup-header">
+                  <div class="accept-popup-title">Файлы задания</div>
+                  <div class="accept-popup-close">
+                    <img src="./images/icon-close-popup.svg" alt="">
+                  </div>
+                </div>
+                <div class="accept-popup-body">
+                  <div class="accept-popup-block no-bordered">
+                    <div class="accept-popup-files">
+                      <div class="accept-popup-item">
+                        <span class="label">farba.svg</span>
+                        <img src="./images/farba.svg" class="preview" alt="Preview">
+                      </div>
+                      <a href="#" class="accept-popup-item doc" download>
+                        <span class="label">Наименование_файла.docx</span>
+                      </a>
+                      <a href="" class="accept-popup-item doc" download>
+                        <span class="label">Наименование_файла.docx</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="answer-card-item">
+              <div class="answer-card-item-title">
+                Какое-то текстовое поле
+              </div>
+              <div class="answer-card-item-content">
+                Веб-ссылки, скриншоты (из скрин-шотов должно быть видно количество подписчиков аккаунта).
+              </div>
+            </div>
+            <div class="answer-card-item">
+              <div class="answer-card-item-title">
+                Что-то числовое
+              </div>
+              <div class="answer-card-item-content">
+                24
+              </div>
+            </div>
+            <div class="answer-card-item">
+              <div class="answer-card-item-title">
+                Какое-то текстовое поле
+              </div>
+              <div class="answer-card-item-content">
+                Есть в графском парке старый пруд, там лилии цветут.
+              </div>
+            </div>
+            <div class="answer-card-item">
+              <div class="answer-card-item-title">
+                Какой-то селект
+              </div>
+              <div class="answer-card-item-content">
+                Александр Дюма
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="answer-buttons">
+        <a href="#" class="ui-btn blue">
+          <img src="./images/icon-back.svg" alt="back">
+          Назад к таблице
+        </a>
+        <div class="answer-buttons-group">
+          <a href="#" class="ui-btn green">
+            Принято
+          </a>
+          <a href="#" class="ui-btn error">
+            Не принято
+          </a>
+          <a href="#" class="ui-btn purple">
+            Связаться
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--#include file="inc-footer.html"-->

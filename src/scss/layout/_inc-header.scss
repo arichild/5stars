@@ -169,19 +169,27 @@
       box-shadow: 0px 10px 18px rgba(147, 161, 174, 0.15);
       cursor: pointer;
 
+      @media(max-width:1440.99px) {
+        padding: 10px 8px;
+      }
+
       &.hidden {
         display: none;
       }
 
       a {
-        font-weight: 300;
-        font-size: 14px;
+        font-weight: 300 !important;
+        font-size: 14px !important;
         color: #253237;
-        padding: 0;
+        padding: 0 !important;
         display: flex;
         align-items: center;
         line-height: 1;
         opacity: 1;
+
+        @media(max-width:1440.99px) {
+          font-size: 12px !important;
+        }
 
         &::before, &::after {
           display: none;
@@ -193,7 +201,12 @@
         margin-right: 4px;
         width: 16px;
         height: 16px;
-        opacity: 1 !important;   
+        opacity: 1 !important;  
+        
+        @media(max-width:1440.99px) {
+          width: 14px;
+          height: 14px;
+        }
       }
     }
   }
