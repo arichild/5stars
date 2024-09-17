@@ -122,6 +122,7 @@
         background-color: #fff;
         padding: 40px;
         margin-bottom: 40px;
+        height: calc(100% - 40px);
 
         @media(max-width: 1366.99px) {
             padding: 32px;
@@ -190,16 +191,25 @@
     &-buttons {
         display: flex;
         flex-wrap: wrap;
+        align-items: flex-end;
         column-gap: 100px;
         row-gap: 20px;
 
         &-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;           
 
             .ui-btn {
-                width: 170px;                            
+                @media(max-width: 768.99px) {
+                    margin-bottom: 20px;
+                }       
+            }
+
+            &-result {
+                display: flex;
+                max-width: 550px;
+
+                @media(max-width: 768.99px) {
+                    max-width: 100%;
+                }
             }
         }
     }

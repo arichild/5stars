@@ -73,7 +73,12 @@
                     <div class="accept-popup-files">
                       <div class="accept-popup-item">
                         <span class="label">farba.svg</span>
-                        <img src="./images/farba.svg" class="preview" alt="Preview">
+                        <img
+                          src="./images/farba.svg"
+                          class="mfp-link mfp-gallery-image preview"
+                          alt="Preview"
+                          data-href="./images/farba.svg"
+                        >
                       </div>
                       <a href="#" class="accept-popup-item doc" download>
                         <span class="label">Наименование_файла.docx</span>
@@ -127,15 +132,60 @@
           Назад к таблице
         </a>
         <div class="answer-buttons-group">
-          <a href="#" class="ui-btn green">
-            Принято
-          </a>
-          <a href="#" class="ui-btn error">
-            Не принято
-          </a>
-          <a href="#" class="ui-btn purple">
-            Связаться
-          </a>
+          <form class="answer-buttons-group-result form-assessment">
+            <div class="row">
+              <div class="col-us-6">
+                <div class="ui-field">
+                  <div class="ui-label">
+                    Какой-то селект
+                  </div>
+                  <select
+                    type="text"
+                    class="ui-input ui-select small"
+                    name="select1"
+                    id="select1"
+                    required
+                  >
+                    <option></option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-us-6">
+                <div class="ui-field">
+                  <div for="login" class="ui-label">Что-то числовое:</div>
+                  <input
+                    type="text"
+                    class="ui-input"
+                    name="number1"
+                    id="number1"
+                    data-validation="number"
+                    required
+                  >
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <a href="#" class="ui-btn green">
+                  Принято
+                </a>
+              </div>
+              <div class="col-sm-4">
+                <a href="#" class="ui-btn error">
+                  Не принято
+                </a>
+              </div>
+              <div class="col-sm-4">
+                <a href="#" class="ui-btn purple">
+                  Связаться
+                </a>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>

@@ -301,13 +301,13 @@
                     if(file.type.match("image")) {
                       fileItem = `<div class="accept-popup-item">
                         <span class="label">${file.name}</span>
-                        <img src="${fileURL}" class="preview" alt="">
+                        <img src="${fileURL}" class="preview mfp-link mfp-gallery-image" alt="" data-href="${fileURL}">
                         <div class="delete-file"></div>
                       </div>`;
                     } else if(file.type.match("video")) {
                       fileItem = `<div class="accept-popup-item">
                         <span class="label">${file.name}</span>
-                        <video src="${fileURL}" class="preview" alt=""></video>
+                        <video src="${fileURL}" class="preview mfp-link mfp-gallery-video" alt="" data-href="${fileURL}"></video>
                         <div class="delete-file"></div>
                       </div>`;
                     } else {
@@ -357,13 +357,13 @@
                     if(file.type.match("image")) {
                       fileItem = `<div class="accept-popup-item">
                         <span class="label">${file.name}</span>
-                        <img src="${fileURL}" class="preview" alt="Preview">
+                        <img src="${fileURL}" class="preview mfp-link mfp-gallery-image" alt="Preview" data-href="${fileURL}">
                         <div class="delete-file"></div>
                       </div>`;
                     } else if(file.type.match("video")) {
                       fileItem = `<div class="accept-popup-item">
                         <span class="label">${file.name}</span>
-                        <video src="${fileURL}" class="preview" alt="Preview"></video>
+                        <video src="${fileURL}" class="preview mfp-link mfp-gallery-video" alt="Preview" data-href="${fileURL}"></video>
                         <div class="delete-file"></div>
                       </div>`;
                     } else {
@@ -436,14 +436,14 @@
                       imageCount++;
                       if (i < 5) {
                         fileItem = `<div class="accept-file-item">
-                        <img src="${fileURL}" class="preview" alt="Preview">
+                        <img src="${fileURL}" class="preview mfp-link mfp-gallery-image" alt="Preview" data-href="${fileURL}">
                         </div>`;
                       }
                     } else if (file.type.match("video")) {
                       videoCount++;
                       if (i < 5) {
                         fileItem = `<div class="accept-file-item">
-                        <video src="${fileURL}" class="preview" alt="Preview"></video>
+                        <video src="${fileURL}" class="preview mfp-link mfp-gallery-video" alt="Preview" data-href="${fileURL}"></video>
                         </div>`;
                       }
                     } else {
