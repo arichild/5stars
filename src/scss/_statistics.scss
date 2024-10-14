@@ -40,7 +40,19 @@
 
         th {           
             text-align: center;
-            border-right: 1px solid #E4EDF2;             
+            border-right: 1px solid #E4EDF2;            
+            padding-top: 18px;
+            padding-bottom: 18px;
+
+            @media(max-width:1440.99px) {
+                padding-top: 16px;
+                padding-bottom: 16px;
+            }
+
+            @media(max-width:1024.99px) {
+                padding-top: 14px;
+                padding-bottom: 14px;
+            }
 
             img {
                 max-width: 142px;

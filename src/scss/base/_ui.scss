@@ -80,6 +80,11 @@
 
   // line-height: 1;
 
+  .jq-selectbox__dropdown {
+    left: -1px !important;
+    right: -1px !important;
+  }
+
   &:focus {
     border-color: #4fb1eb;
     // color: #000;
@@ -147,6 +152,41 @@ textarea.ui-input {
 
 .select2-results__option {
   padding: 16px;
+}
+
+.select2-results__options {
+  &::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+    background-color: #F3F4F5;
+
+    @media(max-width: 576.99px) {
+      width: 10px;
+      height: 10px;
+    }
+  } 
+  &::-webkit-scrollbar-thumb {
+    width: 16px;
+    height: 16px;
+    background-color: #40A6E2;
+    border-radius: 8px;
+    border-left: 4px solid #F3F4F5;
+    border-right: 4px solid #F3F4F5;
+    border-top: 2px solid #F3F4F5;
+    border-bottom: 2px solid #F3F4F5;
+
+    @media(max-width: 576.99px) {
+      width: 10px;
+      height: 10px;
+      border-left: 2px solid #F3F4F5;
+      border-right: 2px solid #F3F4F5;
+      border-top: 1px solid #F3F4F5;
+      border-bottom: 1px solid #F3F4F5;
+    }
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: lighten(#40A6E2, 8%);
+  }
 }
 
 .select2-results__option:not(:last-child) {
@@ -268,11 +308,44 @@ textarea.ui-input {
   left: 0 !important;
   min-width: 100% !important;
   width: auto !important;
-  max-width: 300px !important;
+  max-width: 300px !important;  
 
   ul {
     margin-bottom: 0 !important;
     margin-top: 0 !important;
+
+    &::-webkit-scrollbar {
+      width: 16px;
+      height: 16px;
+      background-color: #F3F4F5;
+
+      @media(max-width: 576.99px) {
+        width: 10px;
+        height: 10px;
+      }
+    } 
+    &::-webkit-scrollbar-thumb {
+      width: 16px;
+      height: 16px;
+      background-color: #40A6E2;
+      border-radius: 8px;
+      border-left: 4px solid #F3F4F5;
+      border-right: 4px solid #F3F4F5;
+      border-top: 2px solid #F3F4F5;
+      border-bottom: 2px solid #F3F4F5;
+
+      @media(max-width: 576.99px) {
+        width: 10px;
+        height: 10px;
+        border-left: 2px solid #F3F4F5;
+        border-right: 2px solid #F3F4F5;
+        border-top: 1px solid #F3F4F5;
+        border-bottom: 1px solid #F3F4F5;
+      }
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: lighten(#40A6E2, 8%);
+    }    
   }
 }
 
