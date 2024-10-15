@@ -745,5 +745,28 @@ if (resultNav && resultNav.next.node && resultNav.prev.node) {
   } 
 
 })();
+
+  // Открытый ответ. Выставление баллов
+  (function() {
+    const pointsSelect = document.getElementById('points');
+    const ownPointsInput = document.getElementById('own-points');
+
+    if(!pointsSelect || !ownPointsInput) return;
+
+    function updateOwnPointsState() {
+      const selectedValue = $(pointsSelect).val();
+      const isCustomValue = selectedValue === '-1';
+      
+      ownPointsInput.disabled = !isCustomValue;
+      
+      if (isCustomValue) {
+        ownPointsInput.focus();
+      }
+    }
+
+    $(pointsSelect).on('change', updateOwnPointsState);
+
+    updateOwnPointsState();
+  })();
  
 });

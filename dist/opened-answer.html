@@ -137,13 +137,13 @@
               <div class="col-us-6">
                 <div class="ui-field">
                   <div class="ui-label">
-                    Какой-то селект
+                    Количество баллов:
                   </div>
                   <select
                     type="text"
                     class="ui-input ui-select small"
-                    name="select1"
-                    id="select1"
+                    name="points"
+                    id="points"
                     required
                   >
                     <option></option>
@@ -153,19 +153,21 @@
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
+                    <option value="-1">Другое</option>
                   </select>
                 </div>
               </div>
               <div class="col-us-6">
                 <div class="ui-field">
-                  <div for="login" class="ui-label">Что-то числовое:</div>
+                  <label for="own-points" class="ui-label">Введите количество:</label>
                   <input
                     type="text"
                     class="ui-input"
-                    name="number1"
-                    id="number1"
+                    name="own-points"
+                    id="own-points"
                     data-validation="number"
                     required
+                    disabled
                   >
                 </div>
               </div>
