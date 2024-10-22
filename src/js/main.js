@@ -1,42 +1,178 @@
 $(document).ready(function () {
   // popup
-  $(document).on("click", ".mfp-link", function () {
+  // $(document).on("click", ".mfp-link", function () {
+  //   var a = $(this);
+  //   var type = "ajax"; // По умолчанию используем ajax тип
+  //   var src = a.attr("data-href");
+    
+  //   if (a.hasClass('mfp-gallery-image')) {
+  //     type = "image";
+  //   } else if (a.hasClass('mfp-gallery-video')) {
+  //     type = "inline";
+  //     src = '<div class="mfp-gallery-video-wrapper"><video src="' + src + '" controls autoplay></video></div>';
+  //   }
+  
+  //   $.magnificPopup.open({
+  //     items: {src: src},
+  //     type: type,
+  //     overflowY: "scroll",
+  //     removalDelay: 300,
+  //     mainClass: 'my-mfp-zoom-in',
+  //     ajax: {
+  //       tError: "Error. Not valid url",
+  //     },
+  //     image: {
+  //       titleSrc: 'title' // Используем атрибут title для заголовка изображения, если он есть
+  //     },
+  //     callbacks: {
+  //       open: function () {
+  //         setTimeout(function () {
+  //           $('.mfp-wrap').addClass('not_delay');
+  //           $('.mfp-popup').addClass('not_delay');
+  //         }, 700);
+  //         document.documentElement.style.overflow = 'hidden';
+  //       },
+  //       close: function () {
+  //         document.documentElement.style.overflow = '';
+  //       }
+  //     }
+  //   });
+  //   return false;
+  // });
+
+  $(document).on("click", ".mfp-link", function() {
     var a = $(this);
-    var type = "ajax"; // По умолчанию используем ajax тип
+    var type = "ajax";
     var src = a.attr("data-href");
     
     if (a.hasClass('mfp-gallery-image')) {
       type = "image";
+      
+      // Находим все изображения галереи
+      var galleryItems = $('.mfp-gallery-image').map(function() {
+        return {
+          src: $(this).attr('data-href'),
+          title: $(this).attr('title') || '',
+          type: 'image'
+        };
+      }).get();
+      
+      // Находим индекс текущего изображения
+      var currentIndex = galleryItems.findIndex(function(item) {
+        return item.src === src;
+      });
+      
+      // Проверяем, что у нас есть элементы
+      if (galleryItems.length === 0) {
+        console.error('No gallery items found');
+        return false;
+      }
+      
+      $.magnificPopup.open({
+        items: galleryItems,
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1],
+          tPrev: 'Предыдущее',
+          tNext: 'Следующее',
+          tCounter: '<span class="mfp-counter">%curr% из %total%</span>'
+        },
+        overflowY: "scroll",
+        removalDelay: 300,
+        mainClass: 'my-mfp-zoom-in',
+        image: {
+          titleSrc: function(item) {
+            return item.title || '';
+          },
+          verticalFit: true
+        },
+        callbacks: {
+          beforeOpen: function() {
+            // Устанавливаем начальный индекс перед открытием
+            if (currentIndex >= 0) {
+              this.goTo(currentIndex);
+            }
+          },
+          open: function() {
+            setTimeout(function() {
+              $('.mfp-wrap').addClass('not_delay');
+              $('.mfp-popup').addClass('not_delay');
+            }, 700);
+            document.documentElement.style.overflow = 'hidden';
+          },
+          close: function() {
+            document.documentElement.style.overflow = '';
+          }
+        }
+      });
     } else if (a.hasClass('mfp-gallery-video')) {
       type = "inline";
-      src = '<div class="mfp-gallery-video-wrapper"><video src="' + src + '" controls autoplay></video></div>';
-    }
-  
-    $.magnificPopup.open({
-      items: {src: src},
-      type: type,
-      overflowY: "scroll",
-      removalDelay: 300,
-      mainClass: 'my-mfp-zoom-in',
-      ajax: {
-        tError: "Error. Not valid url",
-      },
-      image: {
-        titleSrc: 'title' // Используем атрибут title для заголовка изображения, если он есть
-      },
-      callbacks: {
-        open: function () {
-          setTimeout(function () {
-            $('.mfp-wrap').addClass('not_delay');
-            $('.mfp-popup').addClass('not_delay');
-          }, 700);
-          document.documentElement.style.overflow = 'hidden';
-        },
-        close: function () {
-          document.documentElement.style.overflow = '';
-        }
+      // Проверяем наличие src перед формированием HTML
+      if (!src) {
+        console.error('Video source not found');
+        return false;
       }
-    });
+      
+      src = '<div class="mfp-gallery-video-wrapper"><video src="' + src + '" controls autoplay></video></div>';
+      
+      $.magnificPopup.open({
+        items: {
+          src: src,
+          type: type  // Явно указываем тип
+        },
+        type: type,
+        overflowY: "scroll",
+        removalDelay: 300,
+        mainClass: 'my-mfp-zoom-in',
+        callbacks: {
+          open: function() {
+            setTimeout(function() {
+              $('.mfp-wrap').addClass('not_delay');
+              $('.mfp-popup').addClass('not_delay');
+            }, 700);
+            document.documentElement.style.overflow = 'hidden';
+          },
+          close: function() {
+            document.documentElement.style.overflow = '';
+          }
+        }
+      });
+    } else {
+      // Проверяем наличие src для ajax
+      if (!src) {
+        console.error('Ajax source not found');
+        return false;
+      }
+      
+      $.magnificPopup.open({
+        items: {
+          src: src,
+          type: type  // Явно указываем тип
+        },
+        type: type,
+        overflowY: "scroll",
+        removalDelay: 300,
+        mainClass: 'my-mfp-zoom-in',
+        ajax: {
+          tError: "Error. Not valid url",
+        },
+        callbacks: {
+          open: function() {
+            setTimeout(function() {
+              $('.mfp-wrap').addClass('not_delay');
+              $('.mfp-popup').addClass('not_delay');
+            }, 700);
+            document.documentElement.style.overflow = 'hidden';
+          },
+          close: function() {
+            document.documentElement.style.overflow = '';
+          }
+        }
+      });
+    }
+    
     return false;
   });
 
